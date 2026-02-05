@@ -310,26 +310,32 @@ const SERVICES = [
   {
     id: "product3d",
     title: "3D Product Animation",
-    desc: "Cinematic renders for ads, social media, and brand campaigns",
+    desc: "High-quality renders and cinematic presentation for ads, social media, and brand campaigns.",
     filter: "product3d"
   },
   {
     id: "vfx_comp",
     title: "VFX & Compositing",
-    desc: "CG integration, cleanup, roto, tracking, holograms, environment effects",
+    desc: "Integrating CG into live-action, cleanup shots, rotoscoping, tracking, holograms, environment effects.",
     filter: "vfx_comp"
   },
   {
     id: "motion",
     title: "Motion Graphics",
-    desc: "Clean graphics for ads, intros, overlays, and visual enhancements",
+    desc: "Clean, modern graphics for ads, intros, overlays, and visual enhancements.",
     filter: "motion"
   },
   {
     id: "direction",
     title: "Creative Direction",
-    desc: "Concept development, shot planning, story visualization, execution",
+    desc: "Concept development, shot planning, story visualization, and final execution for short VFX pieces.",
     filter: "direction"
+  },
+  {
+    id: "training",
+    title: "Training (2D Compositing)",
+    desc: "Beginner-friendly After Effects classes focused on real-world skills and project-based learning.",
+    link: "training.html"
   }
 ];
 
@@ -386,7 +392,7 @@ function renderHeader() {
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
   
   const navItems = [
-    { href: "index.html", label: "Reel" },
+    { href: "index.html", label: "About" },
     { href: "work.html", label: "Work" },
     { href: "training.html", label: "Training" },
     { href: "contact.html", label: "Contact" }
@@ -415,50 +421,35 @@ function renderHero() {
   const hero = document.getElementById("hero");
   if (!hero) return;
   
-  const heroProjects = PROJECTS.filter(p => p.hero && p.breakdownVideo);
-  const reelWarning = ARTIST.reelDuration > 90 
-    ? `<span class="reel-warning" data-qc="reel-long">⚠ REEL TOO LONG (${ARTIST.reelDuration}s)</span>` 
-    : "";
-  
   hero.innerHTML = `
-    <div class="hero-inner">
+    <div class="about-inner">
       <a href="training.html" class="training-banner">
         <span class="training-banner-icon">🎓</span>
         <span class="training-banner-text"><strong>Learn VFX Compositing</strong> — Beginner-friendly After Effects classes now open</span>
         <span class="training-banner-cta">Enroll Now →</span>
       </a>
-      <div class="hero-reel">
-        <div class="reel-container" id="reel-container">
-          <div class="reel-placeholder" id="reel-placeholder">
-            <button class="reel-play-btn" id="reel-play-btn" aria-label="Play demo reel">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-              <span>PLAY REEL</span>
-            </button>
-            <span class="reel-duration">${formatDuration(ARTIST.reelDuration)}</span>
-            ${reelWarning}
-          </div>
-          <video class="reel-video" id="reel-video" muted playsinline preload="none">
-            <source src="${ARTIST.reelUrl}" type="video/mp4">
-          </video>
+      
+      <section class="about-hero">
+        <h1 class="about-name">Goodness Chisom</h1>
+        <p class="about-title">Visual Effects Artist & Digital Creative</p>
+      </section>
+      
+      <section class="about-intro">
+        <div class="about-text">
+          <p>Goodness is a Visual Effects Artist and Digital Creative blending 3D, compositing, and strategic visual storytelling to help brands communicate with clarity and impact.</p>
+          <p>Specializing in product animation, CG integration, and cinematic visual design, she transforms simple ideas into expressive, emotionally-driven visuals.</p>
+          <p>Over time, she has built a reputation for delivering <strong>VFX that feels alive</strong>.</p>
+          <p>Beyond production, she teaches compositing and empowers beginners to understand the logic behind VFX, not just the buttons.</p>
         </div>
-      </div>
-      <div class="hero-shots">
-        <h2 class="hero-shots-title">Best Shots</h2>
-        <div class="hero-shots-grid">
-          ${heroProjects.slice(0, 6).map(p => `
-            <a href="work.html?project=${p.id}" class="hero-shot" aria-label="View ${p.title}">
-              <img src="${p.thumb}" alt="${p.title}" loading="lazy">
-              <span class="hero-shot-title">${p.title}</span>
-            </a>
-          `).join("")}
+        <div class="about-location">
+          <span class="location-icon">📍</span>
+          <span>Based in Lagos, working globally.</span>
         </div>
-      </div>
-      <div class="hero-info">
-        <span class="hero-availability">${ARTIST.availability}</span>
-        <span class="hero-divider">•</span>
-        <span class="hero-location">${ARTIST.location} — Working Globally</span>
-        <span class="hero-divider">•</span>
-        <span class="hero-tools">After Effects / Blender / Cinema 4D</span>
+      </section>
+      
+      <div class="about-cta-row">
+        <a href="work.html" class="btn-primary">View Work</a>
+        <a href="contact.html" class="btn-secondary">Get in Touch</a>
       </div>
     </div>
   `;
@@ -472,13 +463,40 @@ function renderServices() {
     <div class="services-inner">
       <h2 class="section-title">What I Do</h2>
       <div class="services-grid">
-        ${SERVICES.map(s => `
-          <a href="work.html?filter=${s.filter}" class="service-card" data-filter="${s.filter}">
+        ${SERVICES.map(s => {
+          const href = s.link ? s.link : `work.html?filter=${s.filter}`;
+          return `
+          <a href="${href}" class="service-card" data-filter="${s.filter || ''}">
             <h3 class="service-title">${s.title}</h3>
             <p class="service-desc">${s.desc}</p>
-            <span class="service-cta">View Work →</span>
+            <span class="service-cta">${s.link ? 'Learn More' : 'View Work'} →</span>
           </a>
-        `).join("")}
+        `}).join("")}
+      </div>
+    </div>
+    
+    <div class="experience-inner">
+      <h2 class="section-title">Experience</h2>
+      <div class="experience-grid">
+        <div class="experience-card">
+          <h3 class="experience-role">VFX Artist & Compositor</h3>
+          <p class="experience-company">Freelance — Nigeria / Remote</p>
+          <ul class="experience-list">
+            <li>CG product shots</li>
+            <li>Roto, cleanup, matchmoving</li>
+            <li>Creative short-form VFX</li>
+            <li>Compositing for ads and personal brand visuals</li>
+          </ul>
+        </div>
+        <div class="experience-card">
+          <h3 class="experience-role">VFX Instructor</h3>
+          <p class="experience-company">Private Training</p>
+          <ul class="experience-list">
+            <li>Taught 2D compositing to beginner creatives</li>
+            <li>Designed project-based learning structure</li>
+            <li>Provided hands-on guidance in tracking, rotoscoping, holograms, color matching, and integration workflows</li>
+          </ul>
+        </div>
       </div>
     </div>
   `;
