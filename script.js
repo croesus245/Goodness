@@ -388,8 +388,7 @@ function renderHeader() {
   const navItems = [
     { href: "index.html", label: "Reel" },
     { href: "work.html", label: "Work" },
-    { href: "breakdowns.html", label: "Breakdowns" },
-    { href: "resume.html", label: "Resume" },
+    { href: "training.html", label: "Training" },
     { href: "contact.html", label: "Contact" }
   ];
   
@@ -423,6 +422,11 @@ function renderHero() {
   
   hero.innerHTML = `
     <div class="hero-inner">
+      <a href="training.html" class="training-banner">
+        <span class="training-banner-icon">🎓</span>
+        <span class="training-banner-text"><strong>Learn VFX Compositing</strong> — Beginner-friendly After Effects classes now open</span>
+        <span class="training-banner-cta">Enroll Now →</span>
+      </a>
       <div class="hero-reel">
         <div class="reel-container" id="reel-container">
           <div class="reel-placeholder" id="reel-placeholder">

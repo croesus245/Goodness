@@ -222,6 +222,62 @@ ul, ol {
   align-items: center;
 }
 
+/* Training Banner */
+.training-banner {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(168, 85, 247, 0.15));
+  border: 1px solid var(--accent);
+  border-radius: var(--border-radius);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  margin-bottom: var(--space-lg);
+}
+
+.training-banner:hover {
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.25), rgba(168, 85, 247, 0.25));
+  transform: translateY(-2px);
+  color: var(--text-primary);
+}
+
+.training-banner-icon {
+  font-size: 1.25rem;
+}
+
+.training-banner-text {
+  font-size: 0.9375rem;
+}
+
+.training-banner-text strong {
+  color: var(--accent);
+}
+
+.training-banner-cta {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent);
+  padding: var(--space-xs) var(--space-md);
+  background: rgba(0, 212, 255, 0.2);
+  border-radius: 100px;
+}
+
+@media (max-width: 768px) {
+  .training-banner {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-sm);
+  }
+  
+  .training-banner-text {
+    font-size: 0.875rem;
+  }
+}
+
 .hero-inner {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -1173,6 +1229,247 @@ body.qc-mode .modal-qc-warnings {
 
 /* ============================================
    RESPONSIVE
+   ============================================ */
+
+/* ============================================
+   TRAINING PAGE
+   ============================================ */
+.training {
+  padding: var(--space-2xl) var(--space-lg);
+}
+
+.training-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.training-hero {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.training-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--space-md);
+  background: linear-gradient(135deg, var(--accent), #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.training-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.training-content {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+.training-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.training-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--border);
+}
+
+.training-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.training-list li {
+  display: flex;
+  gap: var(--space-md);
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.training-list .list-icon {
+  color: var(--success);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.training-list.simple li {
+  padding-left: var(--space-lg);
+  position: relative;
+}
+
+.training-list.simple li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+.training-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.feature-card {
+  padding: var(--space-lg);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--border-radius);
+}
+
+.feature-icon {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-sm);
+}
+
+.feature-card h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.feature-card p {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.software-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.software-tag {
+  padding: var(--space-sm) var(--space-md);
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+}
+
+/* Training CTA */
+.training-cta {
+  position: sticky;
+  top: calc(var(--header-height) + var(--space-lg));
+}
+
+.cta-card {
+  padding: var(--space-xl);
+  background: linear-gradient(135deg, var(--bg-elevated), var(--bg-card));
+  border: 1px solid var(--accent);
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+}
+
+.cta-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+  line-height: 1.5;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: var(--space-md) var(--space-xl);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--bg-dark);
+  background: var(--accent);
+  border-radius: var(--border-radius);
+  transition: all var(--transition-fast);
+}
+
+.cta-button:hover {
+  background: var(--accent-hover);
+  color: var(--bg-dark);
+  transform: translateY(-2px);
+}
+
+.cta-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.cta-note {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: var(--space-md);
+}
+
+.training-contact {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.training-contact p {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-bottom: var(--space-xs);
+}
+
+.training-contact a {
+  font-size: 0.875rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* Training Page Responsive */
+@media (max-width: 900px) {
+  .training-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .training-cta {
+    position: static;
+    order: -1;
+    margin-bottom: var(--space-xl);
+  }
+}
+
+@media (max-width: 600px) {
+  .training-title {
+    font-size: 1.75rem;
+  }
+  
+  .training-features {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   RESPONSIVE (MAIN)
    ============================================ */
 @media (max-width: 1024px) {
   .hero-inner {
