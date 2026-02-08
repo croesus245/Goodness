@@ -1127,6 +1127,15 @@ function formatDuration(seconds) {
 // CUSTOM CURSOR
 // ============================================
 function initCustomCursor() {
+  // Disable on mobile/touch devices for performance
+  if ('ontouchstart' in window || navigator.maxTouchPoints > 0 || window.innerWidth <= 1024) {
+    const cursor = document.getElementById('cursor');
+    const follower = document.getElementById('cursorFollower');
+    if (cursor) cursor.style.display = 'none';
+    if (follower) follower.style.display = 'none';
+    return;
+  }
+  
   const cursor = document.getElementById('cursor');
   const follower = document.getElementById('cursorFollower');
   
@@ -1207,6 +1216,9 @@ function initPageLoader() {
   const loader = document.getElementById('pageLoader');
   if (!loader) return;
   
+  // On mobile, hide loader immediately for better performance
+  const isMobile = window.innerWidth <= 768 || 'ontouchstart' in window;
+  
   window.addEventListener('load', () => {
     setTimeout(() => {
       loader.classList.add('loaded');
@@ -1220,7 +1232,7 @@ function initPageLoader() {
           }
         });
       }, 100);
-    }, 800);
+    }, isMobile ? 300 : 800); // Faster on mobile
   });
   
   // Prevent scroll while loading

@@ -132,7 +132,7 @@ ul, ol {
 }
 
 /* ============================================
-   MOBILE MENU OPEN STATE - BLUR ENTIRE PAGE
+   MOBILE MENU OPEN STATE - DARKEN PAGE (no blur for performance)
    ============================================ */
 body.menu-open main,
 body.menu-open .hero,
@@ -142,8 +142,8 @@ body.menu-open .training,
 body.menu-open .contact,
 body.menu-open .footer,
 body.menu-open .page-content {
-  filter: blur(20px);
-  transition: filter 0.3s ease;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
 }
 
 body.menu-open::after {
@@ -2605,7 +2605,7 @@ body.qc-mode .modal-qc-warnings {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .page-loader.loaded {
@@ -2623,12 +2623,12 @@ body.qc-mode .modal-qc-warnings {
 }
 
 .loader-ring {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border: 2px solid var(--border);
   border-top-color: var(--accent);
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  animation: spin 0.8s linear infinite;
 }
 
 @keyframes spin {
@@ -2636,17 +2636,18 @@ body.qc-mode .modal-qc-warnings {
 }
 
 .loader-text {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--text-primary);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  animation: pulse 1.5s ease-in-out infinite;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
+/* Hide loader on mobile for instant load */
+@media (max-width: 768px) {
+  .page-loader {
+    display: none !important;
+  }
 }
 
 /* ============================================
@@ -3064,6 +3065,31 @@ body.qc-mode .modal-qc-warnings {
   body {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+  }
+  
+  /* PERFORMANCE: Disable heavy effects on mobile */
+  .grain-overlay {
+    display: none !important;
+  }
+  
+  .gradient-blob {
+    display: none !important;
+  }
+  
+  .cursor,
+  .cursor-follower {
+    display: none !important;
+  }
+  
+  /* Simpler animations on mobile */
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  .stagger-children > * {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 
