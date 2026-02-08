@@ -17,6 +17,21 @@
 </head>
 <body>
   
+  <!-- Page Loader -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-content">
+      <div class="loader-ring"></div>
+      <span class="loader-text">Goodness Chisom</span>
+    </div>
+  </div>
+  
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+  
+  <!-- Grain Overlay -->
+  <div class="grain-overlay"></div>
+  
   <header class="header" id="header"></header>
   
   <main>
@@ -38,6 +53,9 @@
       setupEventListeners();
       setupLazyLoading();
       setupKeyboardNav();
+      initCustomCursor();
+      initScrollAnimations();
+      initPageLoader();
     });
   </script>
 </body>

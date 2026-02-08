@@ -422,34 +422,46 @@ function renderHero() {
   if (!hero) return;
   
   hero.innerHTML = `
+    <!-- Floating gradient blobs -->
+    <div class="gradient-blob" style="top: -200px; left: -200px;"></div>
+    <div class="gradient-blob" style="top: 50%; right: -200px;"></div>
+    
     <div class="about-inner">
-      <a href="training.html" class="training-banner">
+      <a href="training.html" class="training-banner reveal hover-lift">
         <span class="training-banner-icon">🎓</span>
-        <span class="training-banner-text"><strong>Learn VFX Compositing</strong> — Beginner-friendly After Effects classes now open</span>
+        <span class="training-banner-text"><strong>Learn VFX Compositing</strong> — Beginner-friendly VFX classes now open</span>
         <span class="training-banner-cta">Enroll Now →</span>
       </a>
       
-      <section class="about-hero">
-        <h1 class="about-name">Goodness Chisom</h1>
-        <p class="about-title">Visual Effects Artist & Digital Creative</p>
-      </section>
-      
-      <section class="about-intro">
-        <div class="about-text">
-          <p>Goodness is a Visual Effects Artist and Digital Creative blending 3D, compositing, and strategic visual storytelling to help brands communicate with clarity and impact.</p>
-          <p>Specializing in product animation, CG integration, and cinematic visual design, she transforms simple ideas into expressive, emotionally-driven visuals.</p>
-          <p>Over time, she has built a reputation for delivering <strong>VFX that feels alive</strong>.</p>
-          <p>Beyond production, she teaches compositing and empowers beginners to understand the logic behind VFX, not just the buttons.</p>
+      <div class="about-grid">
+        <div class="about-image img-reveal reveal">
+          <img src="goodness.jpg" alt="Goodness Chisom - VFX Artist" />
         </div>
-        <div class="about-location">
-          <span class="location-icon">📍</span>
-          <span>Based in Lagos, working globally.</span>
+        
+        <div class="about-content">
+          <section class="about-hero reveal reveal-delay-1">
+            <h1 class="about-headline">Hi, I'm <span class="name-highlight">Goodness Chisom</span></h1>
+            <p class="about-title">Visual Effects Artist & Digital Creative</p>
+          </section>
+          
+          <section class="about-intro reveal reveal-delay-2">
+            <div class="about-text stagger-children">
+              <p>I'm a Visual Effects Artist and Digital Creative blending 3D, compositing, and strategic visual storytelling to help brands communicate with clarity and impact.</p>
+              <p>Specializing in product animation, CG integration, and cinematic visual design, I transform simple ideas into expressive, emotionally-driven visuals.</p>
+              <p>Over time, I've built a reputation for delivering <strong>VFX that feels alive</strong>.</p>
+              <p>Beyond production, I teach compositing and empower beginners to understand the logic behind VFX, not just the buttons.</p>
+            </div>
+            <div class="about-location">
+              <span class="location-icon">📍</span>
+              <span>Based in Lagos, working globally.</span>
+            </div>
+          </section>
+          
+          <div class="about-cta-row reveal reveal-delay-3">
+            <a href="work.html" class="btn-primary magnetic-btn"><span>View Work</span></a>
+            <a href="contact.html" class="btn-secondary magnetic-btn"><span>Get in Touch</span></a>
+          </div>
         </div>
-      </section>
-      
-      <div class="about-cta-row">
-        <a href="work.html" class="btn-primary">View Work</a>
-        <a href="contact.html" class="btn-secondary">Get in Touch</a>
       </div>
     </div>
   `;
@@ -460,13 +472,13 @@ function renderServices() {
   if (!services) return;
   
   services.innerHTML = `
-    <div class="services-inner">
+    <div class="services-inner reveal">
       <h2 class="section-title">What I Do</h2>
-      <div class="services-grid">
+      <div class="services-grid stagger-children">
         ${SERVICES.map(s => {
           const href = s.link ? s.link : `work.html?filter=${s.filter}`;
           return `
-          <a href="${href}" class="service-card" data-filter="${s.filter || ''}">
+          <a href="${href}" class="service-card hover-lift hover-glow" data-filter="${s.filter || ''}">
             <h3 class="service-title">${s.title}</h3>
             <p class="service-desc">${s.desc}</p>
             <span class="service-cta">${s.link ? 'Learn More' : 'View Work'} →</span>
@@ -709,14 +721,36 @@ function renderContact() {
 function renderFooter() {
   const footer = document.getElementById("footer");
   footer.innerHTML = `
-    <div class="footer-inner">
-      <p class="footer-copy">© ${new Date().getFullYear()} ${ARTIST.name}</p>
-      <button class="qc-toggle" id="qc-toggle" aria-label="Toggle QC mode" title="Toggle Quality Control Mode">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-        </svg>
-        <span>QC</span>
-      </button>
+    <!-- Marquee -->
+    <div class="marquee">
+      <div class="marquee-content">
+        <span>Visual Effects</span>
+        <span>Compositing</span>
+        <span>3D Animation</span>
+        <span>Motion Graphics</span>
+        <span>Product Viz</span>
+        <span>Color Grading</span>
+        <span>Visual Effects</span>
+        <span>Compositing</span>
+        <span>3D Animation</span>
+        <span>Motion Graphics</span>
+        <span>Product Viz</span>
+        <span>Color Grading</span>
+      </div>
+    </div>
+    
+    <div class="footer-inner reveal">
+      <div class="footer-brand">
+        <p class="footer-name">${ARTIST.name}</p>
+        <p class="footer-tagline">Creating visuals that move.</p>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:${ARTIST.email}" class="footer-link link-underline">Email</a>
+        <a href="${ARTIST.instagram}" target="_blank" class="footer-link link-underline">Instagram</a>
+        <a href="${ARTIST.linkedin}" target="_blank" class="footer-link link-underline">LinkedIn</a>
+        <a href="${ARTIST.youtube}" target="_blank" class="footer-link link-underline">YouTube</a>
+      </div>
+      <p class="footer-copy">© ${new Date().getFullYear()} ${ARTIST.name}. All rights reserved.</p>
     </div>
   `;
 }
@@ -1024,4 +1058,219 @@ function formatDuration(seconds) {
   const mins = Math.floor(seconds / 60);
   const secs = seconds % 60;
   return `${mins}:${secs.toString().padStart(2, "0")}`;
+}
+
+// ============================================
+// CUSTOM CURSOR
+// ============================================
+function initCustomCursor() {
+  const cursor = document.getElementById('cursor');
+  const follower = document.getElementById('cursorFollower');
+  
+  if (!cursor || !follower) return;
+  
+  let mouseX = 0, mouseY = 0;
+  let cursorX = 0, cursorY = 0;
+  let followerX = 0, followerY = 0;
+  
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+  
+  // Smooth follow animation
+  function animate() {
+    // Cursor follows instantly
+    cursorX = mouseX;
+    cursorY = mouseY;
+    cursor.style.left = cursorX + 'px';
+    cursor.style.top = cursorY + 'px';
+    
+    // Follower has lag
+    followerX += (mouseX - followerX) * 0.15;
+    followerY += (mouseY - followerY) * 0.15;
+    follower.style.left = followerX + 'px';
+    follower.style.top = followerY + 'px';
+    
+    requestAnimationFrame(animate);
+  }
+  animate();
+  
+  // Hover states
+  const hoverTargets = document.querySelectorAll('a, button, .service-card, .project-card, .btn-primary, .btn-secondary');
+  hoverTargets.forEach(target => {
+    target.addEventListener('mouseenter', () => {
+      cursor.classList.add('hovering');
+      follower.classList.add('hovering');
+    });
+    target.addEventListener('mouseleave', () => {
+      cursor.classList.remove('hovering');
+      follower.classList.remove('hovering');
+    });
+  });
+  
+  // Click states
+  document.addEventListener('mousedown', () => follower.classList.add('clicking'));
+  document.addEventListener('mouseup', () => follower.classList.remove('clicking'));
+}
+
+// ============================================
+// SCROLL REVEAL ANIMATIONS
+// ============================================
+function initScrollAnimations() {
+  const reveals = document.querySelectorAll('.reveal, .stagger-children, .img-reveal');
+  
+  if (!reveals.length) return;
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+  
+  reveals.forEach(el => observer.observe(el));
+}
+
+// ============================================
+// PAGE LOADER
+// ============================================
+function initPageLoader() {
+  const loader = document.getElementById('pageLoader');
+  if (!loader) return;
+  
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      loader.classList.add('loaded');
+      document.body.style.overflow = '';
+      
+      // Trigger initial animations
+      setTimeout(() => {
+        document.querySelectorAll('.reveal, .stagger-children').forEach(el => {
+          if (el.getBoundingClientRect().top < window.innerHeight) {
+            el.classList.add('revealed');
+          }
+        });
+      }, 100);
+    }, 800);
+  });
+  
+  // Prevent scroll while loading
+  document.body.style.overflow = 'hidden';
+}
+
+// ============================================
+// MAGNETIC BUTTONS
+// ============================================
+function initMagneticButtons() {
+  const magnetics = document.querySelectorAll('.magnetic-btn');
+  
+  magnetics.forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      
+      btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+      
+      const span = btn.querySelector('span');
+      if (span) {
+        span.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+      }
+    });
+    
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = 'translate(0, 0)';
+      const span = btn.querySelector('span');
+      if (span) span.style.transform = 'translate(0, 0)';
+    });
+  });
+}
+
+// ============================================
+// HOVER GLOW EFFECT
+// ============================================
+function initHoverGlow() {
+  const glowElements = document.querySelectorAll('.hover-glow');
+  
+  glowElements.forEach(el => {
+    el.addEventListener('mousemove', (e) => {
+      const rect = el.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      el.style.setProperty('--mouse-x', x + '%');
+      el.style.setProperty('--mouse-y', y + '%');
+    });
+  });
+}
+
+// ============================================
+// SMOOTH PARALLAX SCROLLING
+// ============================================
+function initParallax() {
+  const parallaxElements = document.querySelectorAll('[data-parallax]');
+  const header = document.querySelector('.header');
+  
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    
+    // Header scroll effect
+    if (header) {
+      if (scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+    
+    // Parallax elements
+    if (parallaxElements.length) {
+      parallaxElements.forEach(el => {
+        const speed = parseFloat(el.dataset.parallax) || 0.5;
+        const yPos = scrollY * speed;
+        el.style.transform = `translateY(${yPos}px)`;
+      });
+    }
+  }, { passive: true });
+}
+
+// ============================================
+// INITIALIZE ALL PREMIUM EFFECTS
+// ============================================
+function initPremiumEffects() {
+  initMagneticButtons();
+  initHoverGlow();
+  initParallax();
+  
+  // Re-init cursor for dynamic content
+  setTimeout(() => {
+    const hoverTargets = document.querySelectorAll('a, button, .service-card, .project-card, .btn-primary, .btn-secondary');
+    const cursor = document.getElementById('cursor');
+    const follower = document.getElementById('cursorFollower');
+    
+    if (cursor && follower) {
+      hoverTargets.forEach(target => {
+        target.addEventListener('mouseenter', () => {
+          cursor.classList.add('hovering');
+          follower.classList.add('hovering');
+        });
+        target.addEventListener('mouseleave', () => {
+          cursor.classList.remove('hovering');
+          follower.classList.remove('hovering');
+        });
+      });
+    }
+  }, 500);
+}
+
+// Call after DOM content loaded
+if (typeof window !== 'undefined') {
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(initPremiumEffects, 100);
+  });
 }
