@@ -1900,6 +1900,7 @@ body.qc-mode .modal-qc-warnings {
   }
   
   .header-nav {
+    display: flex;
     position: fixed;
     top: 0;
     right: 0;
