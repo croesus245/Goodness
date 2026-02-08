@@ -436,6 +436,7 @@ function initMobileMenu() {
     nav.classList.remove('open');
     toggle.classList.remove('active');
     toggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
     document.body.style.overflow = '';
   };
   
@@ -445,6 +446,7 @@ function initMobileMenu() {
     nav.classList.toggle('open');
     toggle.classList.toggle('active');
     toggle.setAttribute('aria-expanded', !isOpen);
+    document.body.classList.toggle('menu-open');
     
     // Prevent body scroll when menu is open
     document.body.style.overflow = isOpen ? '' : 'hidden';

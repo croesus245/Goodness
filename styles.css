@@ -106,6 +106,33 @@ ul, ol {
 }
 
 /* ============================================
+   MOBILE MENU OPEN STATE - BLUR ENTIRE PAGE
+   ============================================ */
+body.menu-open main,
+body.menu-open .hero,
+body.menu-open .services,
+body.menu-open .work,
+body.menu-open .training,
+body.menu-open .contact,
+body.menu-open .footer,
+body.menu-open .page-content {
+  filter: blur(20px);
+  transition: filter 0.3s ease;
+}
+
+body.menu-open::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  pointer-events: none;
+}
+
+/* ============================================
    HEADER
    ============================================ */
 .header {
@@ -1877,7 +1904,7 @@ body.qc-mode .modal-qc-warnings {
     z-index: 1100;
   }
   
-  /* Backdrop overlay with heavy blur */
+  /* Backdrop overlay - dark overlay (blur is on content) */
   .header-nav::before {
     content: '';
     position: fixed;
@@ -1885,9 +1912,7 @@ body.qc-mode .modal-qc-warnings {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
+    background: transparent;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
