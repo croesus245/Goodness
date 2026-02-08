@@ -111,7 +111,7 @@ ul, ol {
 .header {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
   background: rgba(250, 250, 250, 0.8);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
@@ -1873,6 +1873,8 @@ body.qc-mode .modal-qc-warnings {
   
   .mobile-menu-toggle {
     display: flex;
+    position: relative;
+    z-index: 200;
   }
   
   .header-nav {
@@ -1890,6 +1892,7 @@ body.qc-mode .modal-qc-warnings {
     -webkit-backdrop-filter: blur(20px);
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transform: translateY(-20px);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 150;
@@ -1898,6 +1901,7 @@ body.qc-mode .modal-qc-warnings {
   .header-nav.open {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
     transform: translateY(0);
   }
   
@@ -2054,15 +2058,37 @@ body.qc-mode .modal-qc-warnings {
     font-size: 1.125rem;
   }
   
-  /* Work Grid Mobile */
+  /* Work Grid Mobile - 2 columns */
   .work-grid,
   .breakdowns-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
   }
   
   .project-card,
   .breakdown-card {
     border-radius: 14px;
+  }
+  
+  .project-info {
+    padding: var(--space-sm);
+  }
+  
+  .project-title {
+    font-size: 0.875rem;
+  }
+  
+  .project-meta {
+    font-size: 0.6875rem;
+  }
+  
+  .project-tags {
+    display: none;
+  }
+  
+  .project-view-btn {
+    font-size: 0.75rem;
+    padding: var(--space-xs) var(--space-sm);
   }
   
   .hero-shots-grid {
@@ -2988,6 +3014,12 @@ body.qc-mode .modal-qc-warnings {
   }
   
   .experience-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Stack work grid on very small screens */
+  .work-grid,
+  .breakdowns-grid {
     grid-template-columns: 1fr;
   }
   
