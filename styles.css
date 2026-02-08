@@ -2002,14 +2002,20 @@ body.qc-mode .modal-qc-warnings {
     padding: var(--space-sm) var(--space-md);
   }
   
-  /* Services Mobile */
+  /* Services Mobile - 2x2 grid with 5th centered below */
   .services {
     padding: var(--space-2xl) var(--space-md);
   }
   
   .services-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-md);
+  }
+  
+  .services-grid .service-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    margin: 0 auto;
   }
   
   .service-card {
@@ -2025,15 +2031,23 @@ body.qc-mode .modal-qc-warnings {
     font-size: 0.875rem;
   }
   
-  /* Experience Mobile */
+  /* Experience Mobile - Side by side */
   .experience-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-md);
   }
   
   .experience-card {
-    padding: var(--space-lg);
+    padding: var(--space-md);
     border-radius: 14px;
+  }
+  
+  .experience-role {
+    font-size: 1rem;
+  }
+  
+  .experience-list li {
+    font-size: 0.8rem;
   }
   
   .experience-role {
@@ -2962,6 +2976,19 @@ body.qc-mode .modal-qc-warnings {
   .btn-secondary {
     font-size: 0.875rem;
     min-height: 44px;
+  }
+  
+  /* Stack grids on very small screens */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .services-grid .service-card:last-child {
+    max-width: 100%;
+  }
+  
+  .experience-grid {
+    grid-template-columns: 1fr;
   }
   
   .service-card,
