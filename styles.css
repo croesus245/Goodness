@@ -1760,7 +1760,76 @@ body.qc-mode .modal-qc-warnings {
   
   .hero {
     min-height: auto;
-    padding: var(--space-lg) var(--space-md);
+    padding: var(--space-xl) var(--space-md);
+  }
+  
+  .about-grid {
+    gap: var(--space-xl);
+  }
+  
+  .about-image {
+    max-width: 280px;
+  }
+  
+  .about-headline {
+    font-size: 1.75rem;
+  }
+  
+  .about-headline .name-highlight {
+    font-size: 2.5rem;
+    margin-top: var(--space-xs);
+  }
+  
+  .about-title {
+    font-size: 0.75rem;
+  }
+  
+  .about-text p {
+    font-size: 0.9375rem;
+  }
+  
+  .about-cta-row {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .training-banner {
+    flex-direction: column;
+    padding: var(--space-md);
+    gap: var(--space-xs);
+  }
+  
+  .training-banner-text {
+    font-size: 0.8125rem;
+    text-align: center;
+  }
+  
+  .services {
+    padding: var(--space-2xl) var(--space-md);
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  .service-card {
+    padding: var(--space-lg);
+  }
+  
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  .experience-card {
+    padding: var(--space-lg);
   }
   
   .hero-info {
@@ -1770,10 +1839,6 @@ body.qc-mode .modal-qc-warnings {
   
   .hero-divider {
     display: none;
-  }
-  
-  .services-grid {
-    grid-template-columns: 1fr;
   }
   
   .work-grid,
@@ -1793,11 +1858,85 @@ body.qc-mode .modal-qc-warnings {
   .contact-grid {
     grid-template-columns: 1fr;
   }
+  
+  .footer-inner {
+    padding: var(--space-2xl) var(--space-md);
+  }
+  
+  .footer-links {
+    gap: var(--space-md);
+  }
+  
+  .marquee-content span {
+    font-size: 1rem;
+    padding: 0 var(--space-lg);
+  }
+  
+  .marquee-content span::after {
+    margin-left: var(--space-lg);
+  }
+  
+  .gradient-blob {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .gradient-blob:nth-child(2) {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 @media (max-width: 480px) {
   .nav-link {
     font-size: 0.75rem;
+    padding: var(--space-xs) 0;
+  }
+  
+  .header-nav {
+    gap: var(--space-sm);
+  }
+  
+  .about-headline {
+    font-size: 1.5rem;
+  }
+  
+  .about-headline .name-highlight {
+    font-size: 2rem;
+  }
+  
+  .about-title {
+    font-size: 0.6875rem;
+  }
+  
+  .about-text p {
+    font-size: 0.875rem;
+  }
+  
+  .training-banner-text {
+    font-size: 0.75rem;
+  }
+  
+  .section-title {
+    font-size: 0.75rem;
+  }
+  
+  .service-card,
+  .experience-card {
+    padding: var(--space-md);
+  }
+  
+  .footer-name {
+    font-size: 1.25rem;
+  }
+  
+  .footer-tagline {
+    font-size: 0.875rem;
+  }
+  
+  .marquee-content span {
+    font-size: 0.875rem;
+    padding: 0 var(--space-md);
   }
   
   .reel-play-btn {
