@@ -8,41 +8,44 @@
    ============================================ */
 :root {
   /* Colors */
-  --bg-dark: #ffffff;
-  --bg-card: #f6f6f6;
-  --bg-elevated: #ffffff;
+  --bg-dark: #fafafa;
+  --bg-card: #ffffff;
+  --bg-elevated: #f5f5f5;
   --bg-hover: #f0f0f0;
-  --text-primary: #0a0a0a;
-  --text-secondary: #4d4d4d;
-  --text-muted: #6b6b6b;
-  --accent: #00d4ff;
-  --accent-hover: #00b8e6;
-  --success: #00ff88;
-  --warning: #ffaa00;
-  --danger: #ff4444;
-  --border: #e2e2e2;
+  --text-primary: #1a1a1a;
+  --text-secondary: #555555;
+  --text-muted: #888888;
+  --accent: #0ea5e9;
+  --accent-hover: #0284c7;
+  --accent-soft: rgba(14, 165, 233, 0.1);
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --border: #e5e5e5;
   
   /* Typography */
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
   
-  /* Spacing */
-  --space-xs: 0.25rem;
-  --space-sm: 0.5rem;
-  --space-md: 1rem;
-  --space-lg: 1.5rem;
-  --space-xl: 2rem;
-  --space-2xl: 3rem;
-  --space-3xl: 4rem;
+  /* Spacing - generous for breathing room */
+  --space-xs: 0.375rem;
+  --space-sm: 0.75rem;
+  --space-md: 1.25rem;
+  --space-lg: 2rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
   
   /* Layout */
-  --header-height: 70px;
-  --max-width: 1400px;
-  --border-radius: 8px;
+  --header-height: 64px;
+  --max-width: 1200px;
+  --border-radius: 16px;
+  --border-radius-sm: 12px;
   
-  /* Transitions */
-  --transition-fast: 150ms ease;
-  --transition-normal: 250ms ease;
+  /* Transitions - smooth and calm */
+  --transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ============================================
@@ -109,17 +112,18 @@ ul, ol {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background: rgba(250, 250, 250, 0.8);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid transparent;
   height: var(--header-height);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition: all var(--transition-normal);
 }
 
 .header.scrolled {
   background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+  border-bottom-color: var(--border);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
 }
 
 .header-inner {
@@ -1693,15 +1697,85 @@ body.qc-mode .modal-qc-warnings {
     order: -1;
     margin-bottom: var(--space-xl);
   }
+  
+  .cta-card {
+    padding: var(--space-xl);
+  }
 }
 
 @media (max-width: 600px) {
+  .training {
+    padding: var(--space-xl) var(--space-md);
+  }
+  
+  .training-hero {
+    margin-bottom: var(--space-2xl);
+  }
+  
   .training-title {
-    font-size: 1.75rem;
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  
+  .training-subtitle {
+    font-size: 1rem;
+  }
+  
+  .training-section-title {
+    font-size: 0.875rem;
+  }
+  
+  .training-list li {
+    font-size: 0.875rem;
   }
   
   .training-features {
     grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+  
+  .feature-card {
+    padding: var(--space-lg);
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+  }
+  
+  .feature-icon {
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+  
+  .feature-card h3 {
+    margin-bottom: 2px;
+  }
+  
+  .cta-card {
+    padding: var(--space-lg);
+    border-radius: 16px;
+  }
+  
+  .cta-title {
+    font-size: 1.125rem;
+  }
+  
+  .cta-desc {
+    font-size: 0.8125rem;
+  }
+  
+  .cta-button {
+    padding: var(--space-md);
+    border-radius: 12px;
+    font-size: 0.9375rem;
+  }
+  
+  .software-tags {
+    justify-content: center;
+  }
+  
+  .software-tag {
+    font-size: 0.8125rem;
+    padding: var(--space-xs) var(--space-md);
   }
 }
 
@@ -1947,6 +2021,39 @@ body.qc-mode .modal-qc-warnings {
   .reel-play-btn svg {
     width: 24px;
     height: 24px;
+  }
+  
+  /* Touch-friendly tappable areas */
+  .btn-primary,
+  .btn-secondary,
+  .cta-button {
+    min-height: 48px;
+  }
+  
+  .nav-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .training-title {
+    font-size: 1.75rem;
+  }
+  
+  .training-subtitle {
+    font-size: 0.9375rem;
+  }
+  
+  .training-list li {
+    font-size: 0.8125rem;
+  }
+  
+  .feature-card h3 {
+    font-size: 0.8125rem;
+  }
+  
+  .feature-card p {
+    font-size: 0.75rem;
   }
 }
 
@@ -2338,4 +2445,149 @@ body.qc-mode .modal-qc-warnings {
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+
+/* ============================================
+   MOBILE-FIRST TOUCH ENHANCEMENTS
+   ============================================ */
+
+/* Tap feedback for touch devices */
+@media (hover: none) and (pointer: coarse) {
+  /* Service cards - tap effect */
+  .service-card:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+  
+  /* Experience cards - tap effect */
+  .experience-card:active {
+    transform: scale(0.98);
+  }
+  
+  /* Buttons - tap effect */
+  .btn-primary:active,
+  .btn-secondary:active,
+  .cta-button:active {
+    transform: scale(0.96);
+  }
+  
+  /* Feature cards - tap effect */
+  .feature-card:active {
+    background: var(--bg-hover);
+  }
+  
+  /* Nav links - tap highlight */
+  .nav-link:active {
+    color: var(--accent);
+  }
+  
+  /* Disable hover-only effects on touch */
+  .service-card:hover,
+  .experience-card:hover,
+  .hover-lift:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .service-card::before {
+    display: none;
+  }
+  
+  /* Faster transitions for snappy feel */
+  .service-card,
+  .experience-card,
+  .btn-primary,
+  .btn-secondary,
+  .cta-button,
+  .feature-card {
+    transition: transform 0.1s ease, opacity 0.1s ease;
+  }
+}
+
+/* iOS safe area support */
+@supports (padding: max(0px)) {
+  .header {
+    padding-left: max(var(--space-md), env(safe-area-inset-left));
+    padding-right: max(var(--space-md), env(safe-area-inset-right));
+  }
+  
+  .footer-inner {
+    padding-bottom: max(var(--space-2xl), env(safe-area-inset-bottom));
+  }
+  
+  .hero,
+  .services,
+  .training {
+    padding-left: max(var(--space-md), env(safe-area-inset-left));
+    padding-right: max(var(--space-md), env(safe-area-inset-right));
+  }
+}
+
+/* Prevent text selection on interactive elements (mobile UX) */
+.btn-primary,
+.btn-secondary,
+.cta-button,
+.nav-link,
+.service-card,
+.feature-card {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth momentum scrolling on iOS */
+.training-content,
+.services-grid,
+.experience-grid {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Better mobile typography */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+  
+  body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+}
+
+/* Hide gradient blobs on very small screens for performance */
+@media (max-width: 380px) {
+  .gradient-blob {
+    display: none;
+  }
+  
+  .about-headline {
+    font-size: 1.375rem;
+  }
+  
+  .about-headline .name-highlight {
+    font-size: 1.75rem;
+  }
+  
+  .training-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Landscape phone optimizations */
+@media (max-height: 500px) and (orientation: landscape) {
+  .header {
+    position: relative;
+  }
+  
+  .hero {
+    padding: var(--space-lg) var(--space-md);
+  }
+  
+  .about-image {
+    max-width: 200px;
+  }
+  
+  .about-grid {
+    gap: var(--space-lg);
+  }
 }
