@@ -431,6 +431,14 @@ function initMobileMenu() {
   
   if (!toggle || !nav) return;
   
+  // Helper to close menu
+  const closeMenu = () => {
+    nav.classList.remove('open');
+    toggle.classList.remove('active');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  };
+  
   toggle.addEventListener('click', () => {
     const isOpen = nav.classList.contains('open');
     
@@ -444,31 +452,28 @@ function initMobileMenu() {
   
   // Close menu when clicking nav links
   nav.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      toggle.classList.remove('active');
-      toggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
+    link.addEventListener('click', closeMenu);
+  });
+  
+  // Close menu when clicking on backdrop (the ::before pseudo-element area)
+  nav.addEventListener('click', (e) => {
+    // If click is on the nav itself (backdrop area) but not on links
+    if (e.target === nav) {
+      closeMenu();
+    }
   });
   
   // Close menu on escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && nav.classList.contains('open')) {
-      nav.classList.remove('open');
-      toggle.classList.remove('active');
-      toggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
+      closeMenu();
     }
   });
   
   // Close menu on resize to desktop
   window.addEventListener('resize', () => {
     if (window.innerWidth > 768 && nav.classList.contains('open')) {
-      nav.classList.remove('open');
-      toggle.classList.remove('active');
-      toggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
+      closeMenu();
     }
   });
 }
