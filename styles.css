@@ -229,8 +229,19 @@ body.menu-open::after {
   background: transparent;
   border: none;
   cursor: pointer;
-  z-index: 200;
+  z-index: 1100;
   -webkit-tap-highlight-color: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+/* Show hamburger on mobile/tablet */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
 }
 
 .mobile-menu-toggle span {
@@ -1928,12 +1939,6 @@ body.qc-mode .modal-qc-warnings {
   /* Header Mobile */
   .header-inner {
     padding: 0 var(--space-md);
-  }
-  
-  .mobile-menu-toggle {
-    display: flex !important;
-    position: relative;
-    z-index: 1100;
   }
   
   /* Backdrop overlay - dark overlay (blur is on content) */

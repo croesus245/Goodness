@@ -409,15 +409,15 @@ function renderHeader() {
         <h1 class="header-name">${ARTIST.name}</h1>
         <p class="header-tagline">${ARTIST.tagline}</p>
       </a>
-      <nav class="header-nav" id="headerNav" aria-label="Main navigation">
-        ${navLinks}
-      </nav>
+      <a href="mailto:${ARTIST.email}" class="header-email">${ARTIST.email}</a>
       <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <a href="mailto:${ARTIST.email}" class="header-email">${ARTIST.email}</a>
+      <nav class="header-nav" id="headerNav" aria-label="Main navigation">
+        ${navLinks}
+      </nav>
     </div>
   `;
   
