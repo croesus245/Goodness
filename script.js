@@ -409,12 +409,68 @@ function renderHeader() {
         <h1 class="header-name">${ARTIST.name}</h1>
         <p class="header-tagline">${ARTIST.tagline}</p>
       </a>
-      <nav class="header-nav" aria-label="Main navigation">
+      <nav class="header-nav" id="headerNav" aria-label="Main navigation">
         ${navLinks}
       </nav>
+      <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <a href="mailto:${ARTIST.email}" class="header-email">${ARTIST.email}</a>
     </div>
   `;
+  
+  // Mobile menu toggle functionality
+  initMobileMenu();
+}
+
+function initMobileMenu() {
+  const toggle = document.getElementById('mobileMenuToggle');
+  const nav = document.getElementById('headerNav');
+  
+  if (!toggle || !nav) return;
+  
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.contains('open');
+    
+    nav.classList.toggle('open');
+    toggle.classList.toggle('active');
+    toggle.setAttribute('aria-expanded', !isOpen);
+    
+    // Prevent body scroll when menu is open
+    document.body.style.overflow = isOpen ? '' : 'hidden';
+  });
+  
+  // Close menu when clicking nav links
+  nav.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+  
+  // Close menu on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('open')) {
+      nav.classList.remove('open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+  });
+  
+  // Close menu on resize to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && nav.classList.contains('open')) {
+      nav.classList.remove('open');
+      toggle.classList.remove('active');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+  });
 }
 
 function renderHero() {
