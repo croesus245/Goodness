@@ -1877,7 +1877,7 @@ body.qc-mode .modal-qc-warnings {
     z-index: 1100;
   }
   
-  /* Backdrop overlay with blur */
+  /* Backdrop overlay with heavy blur */
   .header-nav::before {
     content: '';
     position: fixed;
@@ -1885,9 +1885,9 @@ body.qc-mode .modal-qc-warnings {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
