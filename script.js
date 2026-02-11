@@ -783,6 +783,20 @@ function renderContact() {
 
 function renderFooter() {
   const footer = document.getElementById("footer");
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  
+  const navItems = [
+    { href: "index.html", label: "Home" },
+    { href: "work.html", label: "Work" },
+    { href: "training.html", label: "Training" },
+    { href: "contact.html", label: "Contact" }
+  ];
+  
+  const navLinks = navItems.map(item => {
+    const isActive = currentPage === item.href || (currentPage === '' && item.href === 'index.html');
+    return `<a href="${item.href}" class="footer-nav-link${isActive ? ' active' : ''}">${item.label}</a>`;
+  }).join('');
+  
   footer.innerHTML = `
     <!-- Marquee -->
     <div class="marquee">
@@ -807,6 +821,11 @@ function renderFooter() {
         <p class="footer-name">${ARTIST.name}</p>
         <p class="footer-tagline">Creating visuals that move.</p>
       </div>
+      
+      <nav class="footer-nav" aria-label="Footer navigation">
+        ${navLinks}
+      </nav>
+      
       <div class="footer-links">
         <a href="mailto:${ARTIST.email}" class="footer-link link-underline">Email</a>
         <a href="${ARTIST.instagram}" target="_blank" class="footer-link link-underline">Instagram</a>
