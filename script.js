@@ -99,28 +99,6 @@ const PROJECTS = [
     notes: "Advanced fluid dynamics in Blender."
   },
   {
-    id: "proj-005",
-    title: "Brand Explainer Motion Graphics",
-    year: 2024,
-    category: "motion",
-    role: "Motion Designer — Full Explainer Video",
-    tools: ["After Effects", "Illustrator", "Premiere Pro"],
-    hero: true,
-    thumb: "https://placehold.co/640x360/1a1a1a/666?text=Explainer+Video",
-    finalVideo: "placeholder_final_explainer.mp4",
-    breakdownVideo: "placeholder_breakdown_explainer.mp4",
-    beforeAfter: null,
-    responsibilities: [
-      "Designed custom icons and graphics from brief",
-      "Animated 60-second explainer video",
-      "Created modular graphics for brand consistency",
-      "Synced animations to voiceover timing",
-      "Delivered web-optimized final"
-    ],
-    credits: "Client: Tech Startup (NDA)",
-    notes: "Turnaround: 8 days."
-  },
-  {
     id: "proj-006",
     title: "Water Simulation for Beverage",
     year: 2024,
@@ -144,51 +122,6 @@ const PROJECTS = [
     notes: "Integrated liquid simulation for product ads."
   },
   {
-    id: "proj-007",
-    title: "Social Media Intro Package",
-    year: 2024,
-    category: "motion",
-    role: "Motion Designer — Intro + Lower Thirds",
-    tools: ["After Effects", "Blender", "Illustrator"],
-    hero: false,
-    thumb: "https://placehold.co/640x360/1a1a1a/666?text=Intro+Package",
-    finalVideo: "placeholder_final_intro.mp4",
-    breakdownVideo: "placeholder_breakdown_intro.mp4",
-    beforeAfter: null,
-    responsibilities: [
-      "Designed 8-second animated intro",
-      "Created matching lower thirds templates",
-      "Built 3D logo animation in Blender",
-      "Delivered editable Premiere templates"
-    ],
-    credits: "Client: YouTube Creator",
-    notes: "Template files for client reuse."
-  },
-  {
-    id: "proj-008",
-    title: "Screen Replacement — Laptop Ad",
-    year: 2023,
-    category: "vfx_comp",
-    role: "Compositor — Screen Track + Replacement",
-    tools: ["After Effects", "Mocha Pro"],
-    hero: false,
-    thumb: "https://placehold.co/640x360/1a1a1a/666?text=Screen+Replace",
-    finalVideo: "placeholder_final_screen.mp4",
-    breakdownVideo: "placeholder_breakdown_screen.mp4",
-    beforeAfter: {
-      before: "https://placehold.co/640x360/1a1a1a/666?text=Green+Screen",
-      after: "https://placehold.co/640x360/1a1a1a/666?text=Final+Comp"
-    },
-    responsibilities: [
-      "Tracked laptop screen through full shot",
-      "Replaced green screen with UI mockup",
-      "Added realistic screen reflections",
-      "Matched screen glow to environment"
-    ],
-    credits: "Client: Tech Brand",
-    notes: "300 frames, subtle camera move."
-  },
-  {
     id: "proj-009",
     title: "Wrok Water Brand Spot",
     year: 2024,
@@ -208,50 +141,6 @@ const PROJECTS = [
     ],
     credits: "Client: Wrok Water",
     notes: "Premium water brand animation."
-  },
-  {
-    id: "proj-010",
-    title: "VFX Breakdown Showreel",
-    year: 2024,
-    category: "direction",
-    role: "Director + Editor — Self-Promo Piece",
-    tools: ["Premiere Pro", "After Effects", "DaVinci Resolve"],
-    hero: true,
-    thumb: "https://placehold.co/640x360/1a1a1a/666?text=Breakdown+Reel",
-    finalVideo: "placeholder_final_showreel.mp4",
-    breakdownVideo: "placeholder_breakdown_showreel.mp4",
-    beforeAfter: null,
-    responsibilities: [
-      "Selected 10 best shots from recent work",
-      "Edited 75-second reel with breakdown wipes",
-      "Paced cuts to music for impact",
-      "Color graded for visual consistency",
-      "Rendered web and social media versions"
-    ],
-    credits: "Self-directed",
-    notes: "Updated quarterly."
-  },
-  {
-    id: "proj-011",
-    title: "2D Compositing Course",
-    year: 2024,
-    category: "direction",
-    role: "Instructor — Curriculum Design + Delivery",
-    tools: ["After Effects", "OBS", "Premiere Pro"],
-    hero: false,
-    thumb: "https://placehold.co/640x360/1a1a1a/666?text=Compositing+Course",
-    finalVideo: "placeholder_final_training.mp4",
-    breakdownVideo: "placeholder_breakdown_training.mp4",
-    beforeAfter: null,
-    responsibilities: [
-      "Designed beginner-friendly curriculum",
-      "Recorded tutorial content with screen capture",
-      "Created project files for each lesson",
-      "Taught tracking, roto, holograms, color matching",
-      "Mentored students through completion"
-    ],
-    credits: "Platform: Private Workshops",
-    notes: "Project-based learning approach."
   },
   {
     id: "proj-012",
