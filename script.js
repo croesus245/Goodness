@@ -304,7 +304,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderHero();
   renderServices();
   renderWorkGrid();
-  renderBreakdowns();
   renderResume();
   renderContact();
   renderFooter();
@@ -570,64 +569,6 @@ function renderProjectCard(project) {
   `;
 }
 
-function renderBreakdowns() {
-  const breakdowns = document.getElementById("breakdowns");
-  if (!breakdowns) return;
-  
-  const validProjects = PROJECTS.filter(p => p.breakdownVideo);
-  
-  // Check for filter parameter in URL
-  const urlParams = new URLSearchParams(window.location.search);
-  const filterParam = urlParams.get('filter') || 'all';
-  const projectParam = urlParams.get('project');
-  
-  breakdowns.innerHTML = `
-    <div class="breakdowns-inner">
-      <h2 class="section-title">Breakdowns</h2>
-      <p class="section-subtitle">Plate → Roto/Key/Paint → CG → Comp → Final</p>
-      <div class="filter-chips" role="tablist" aria-label="Filter breakdowns">
-        <button class="filter-chip ${filterParam === 'all' ? 'active' : ''}" data-filter="all" data-section="breakdowns" role="tab">All</button>
-        <button class="filter-chip ${filterParam === 'product3d' ? 'active' : ''}" data-filter="product3d" data-section="breakdowns" role="tab">3D Product</button>
-        <button class="filter-chip ${filterParam === 'vfx_comp' ? 'active' : ''}" data-filter="vfx_comp" data-section="breakdowns" role="tab">VFX+Comp</button>
-        <button class="filter-chip ${filterParam === 'motion' ? 'active' : ''}" data-filter="motion" data-section="breakdowns" role="tab">Motion</button>
-        <button class="filter-chip ${filterParam === 'direction' ? 'active' : ''}" data-filter="direction" data-section="breakdowns" role="tab">Direction</button>
-      </div>
-      <div class="breakdowns-grid" id="breakdowns-grid">
-        ${validProjects.map(p => renderBreakdownCard(p)).join("")}
-      </div>
-    </div>
-  `;
-  
-  // Apply initial filter
-  if (filterParam !== 'all') {
-    filterProjects(filterParam, 'breakdowns');
-  }
-  
-  // Open project modal if specified in URL
-  if (projectParam) {
-    setTimeout(() => openProjectModal(projectParam, 'breakdown'), 100);
-  }
-}
-
-function renderBreakdownCard(project) {
-  return `
-    <article class="breakdown-card" data-category="${project.category}" data-id="${project.id}">
-      <div class="breakdown-thumb-wrap">
-        <img class="breakdown-thumb" src="${project.thumb}" alt="${project.title} breakdown" loading="lazy">
-        <div class="breakdown-play-overlay">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        </div>
-      </div>
-      <div class="breakdown-info">
-        <h3 class="breakdown-title">${project.title}</h3>
-        <p class="breakdown-role">${project.role}</p>
-      </div>
-      <button class="breakdown-view-btn" data-project="${project.id}" data-view="breakdown" aria-label="View ${project.title} breakdown">
-        Watch Breakdown
-      </button>
-    </article>
-  `;
-}
 
 function renderResume() {
   const resume = document.getElementById("resume");
