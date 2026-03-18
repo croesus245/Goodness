@@ -16,8 +16,8 @@ const PROJECTS = [
     tools: ["Blender", "After Effects", "Photoshop"],
     hero: true,
     thumb: "https://placehold.co/640x360/1a1a1a/666?text=Zaron+Cosmetics",
-    finalVideo: "product visualization/zaron.mp4",
-    breakdownVideo: "product visualization/zaron.mp4",
+    finalVideo: "https://res.cloudinary.com/dsu1po0tg/video/upload/v1773817030/zaron_ab6ws2.mp4",
+    breakdownVideo: "https://res.cloudinary.com/dsu1po0tg/video/upload/v1773817030/zaron_ab6ws2.mp4",
     beforeAfter: null,
     responsibilities: [
       "Modeled perfume bottle from client reference photos",
@@ -39,8 +39,8 @@ const PROJECTS = [
     tools: ["Blender", "After Effects"],
     hero: true,
     thumb: "https://placehold.co/640x360/1a1a1a/666?text=Cloth+Simulation",
-    finalVideo: "VFX & LIVEACTION/cloth simulation.mp4",
-    breakdownVideo: "VFX & LIVEACTION/cloth simulation.mp4",
+    finalVideo: "https://res.cloudinary.com/dsu1po0tg/video/upload/v1773817123/cloth_simulation_m8hpxg.mp4",
+    breakdownVideo: "https://res.cloudinary.com/dsu1po0tg/video/upload/v1773817123/cloth_simulation_m8hpxg.mp4",
     beforeAfter: null,
     responsibilities: [
       "Simulated cloth dynamics with realistic physics",
@@ -62,8 +62,8 @@ const PROJECTS = [
     tools: ["Blender", "After Effects", "Photoshop"],
     hero: true,
     thumb: "https://placehold.co/640x360/1a1a1a/666?text=Nivea+Skincare",
-    finalVideo: "product visualization/nivea.mp4",
-    breakdownVideo: "product visualization/nivea.mp4",
+    finalVideo: "https://res.cloudinary.com/dsu1po0tg/video/upload/v1773817077/nivea_htt9rg.mp4",
+    breakdownVideo: "https://res.cloudinary.com/dsu1po0tg/video/upload/v1773817077/nivea_htt9rg.mp4",
     beforeAfter: null,
     responsibilities: [
       "Modeled product from 2D reference images",
@@ -84,8 +84,8 @@ const PROJECTS = [
     tools: ["Blender", "After Effects"],
     hero: false,
     thumb: "https://placehold.co/640x360/1a1a1a/666?text=Fire+Simulation",
-    finalVideo: "VFX & LIVEACTION/fire simulation.mp4",
-    breakdownVideo: "VFX & LIVEACTION/fire simulation.mp4",
+    finalVideo: "https://res.cloudinary.com/dsu1po0tg/video/upload/v1773817154/fire_simulation_konqs8.mp4",
+    breakdownVideo: "https://res.cloudinary.com/dsu1po0tg/video/upload/v1773817154/fire_simulation_konqs8.mp4",
     beforeAfter: null,
     responsibilities: [
       "Simulated fire and smoke with realistic behavior",
@@ -197,8 +197,8 @@ const PROJECTS = [
     tools: ["Blender", "After Effects", "Photoshop"],
     hero: false,
     thumb: "https://placehold.co/640x360/1a1a1a/666?text=Wrok+Water",
-    finalVideo: "product visualization/wrok.mp4",
-    breakdownVideo: "product visualization/wrok.mp4",
+    finalVideo: "https://res.cloudinary.com/dsu1po0tg/video/upload/v1773817080/wrok_cy3hnq.mp4",
+    breakdownVideo: "https://res.cloudinary.com/dsu1po0tg/video/upload/v1773817080/wrok_cy3hnq.mp4",
     beforeAfter: null,
     responsibilities: [
       "Modeled can from product photos",
@@ -262,8 +262,8 @@ const PROJECTS = [
     tools: ["Blender", "After Effects", "Photoshop"],
     hero: false,
     thumb: "https://placehold.co/640x360/1a1a1a/666?text=Face+Fact",
-    finalVideo: "product visualization/face fact.mp4",
-    breakdownVideo: "product visualization/face fact.mp4",
+    finalVideo: "https://res.cloudinary.com/dsu1po0tg/video/upload/v1773817102/face_fact_l9qelq.mp4",
+    breakdownVideo: "https://res.cloudinary.com/dsu1po0tg/video/upload/v1773817102/face_fact_l9qelq.mp4",
     beforeAfter: null,
     responsibilities: [
       "Modeled product from client reference images",
@@ -285,8 +285,8 @@ const PROJECTS = [
     tools: ["Blender", "After Effects", "Photoshop"],
     hero: false,
     thumb: "https://placehold.co/640x360/1a1a1a/666?text=Dr+Brown",
-    finalVideo: "product visualization/dr brown.mp4",
-    breakdownVideo: "product visualization/dr brown.mp4",
+    finalVideo: "https://res.cloudinary.com/dsu1po0tg/video/upload/v1773817055/dr_brown_qzrkyx.mp4",
+    breakdownVideo: "https://res.cloudinary.com/dsu1po0tg/video/upload/v1773817055/dr_brown_qzrkyx.mp4",
     beforeAfter: null,
     responsibilities: [
       "Modeled skincare product from reference materials",
@@ -298,6 +298,29 @@ const PROJECTS = [
     ],
     credits: "Client: Dr Brown Skincare",
     notes: "Professional skincare brand animation."
+  },
+  {
+    id: "proj-014",
+    title: "OPay Fintech App Campaign",
+    year: 2024,
+    category: "product3d",
+    role: "3D Artist — Product Animation + UI Integration",
+    tools: ["Blender", "After Effects", "Photoshop"],
+    hero: false,
+    thumb: "https://placehold.co/640x360/1a1a1a/666?text=OPay+Fintech",
+    finalVideo: "https://res.cloudinary.com/dsu1po0tg/video/upload/v1773817088/opay_lpzjh3.mp4",
+    breakdownVideo: "https://res.cloudinary.com/dsu1po0tg/video/upload/v1773817088/opay_lpzjh3.mp4",
+    beforeAfter: null,
+    responsibilities: [
+      "Created 3D product visualization for fintech app",
+      "Animated UI elements and digital interfaces",
+      "Integrated app branding and visual identity",
+      "Rendered multiple usage scenarios",
+      "Composited with lifestyle backgrounds",
+      "Delivered optimized mobile and web formats"
+    ],
+    credits: "Client: OPay",
+    notes: "Fintech app promotional campaign."
   }
 ];
 
