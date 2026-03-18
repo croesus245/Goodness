@@ -9,15 +9,15 @@
 const PROJECTS = [
   {
     id: "proj-001",
-    title: "Luxury Perfume Product Spot",
+    title: "Zaron Cosmetics Spot",
     year: 2024,
     category: "product3d",
     role: "3D Artist — Full CG Product + Lighting + Compositing",
     tools: ["Blender", "After Effects", "Photoshop"],
     hero: true,
-    thumb: "https://placehold.co/640x360/1a1a1a/666?text=Perfume+Spot",
-    finalVideo: "placeholder_final_perfume.mp4",
-    breakdownVideo: "placeholder_breakdown_perfume.mp4",
+    thumb: "https://placehold.co/640x360/1a1a1a/666?text=Zaron+Cosmetics",
+    finalVideo: "product visualization/zaron.mp4",
+    breakdownVideo: "product visualization/zaron.mp4",
     beforeAfter: null,
     responsibilities: [
       "Modeled perfume bottle from client reference photos",
@@ -27,46 +27,43 @@ const PROJECTS = [
       "Composited final with grain and color grade",
       "Delivered 3 aspect ratios for social media"
     ],
-    credits: "Client: Fragrance Brand (NDA)",
-    notes: "Full CG, 10-day turnaround."
+    credits: "Client: Zaron Cosmetics",
+    notes: "Cosmetics product animation showcase."
   },
   {
     id: "proj-002",
-    title: "Hologram Phone Interface",
+    title: "Fabric Cloth Simulation",
     year: 2024,
     category: "vfx_comp",
-    role: "VFX Compositor — Hologram Design + Integration",
-    tools: ["After Effects", "Blender", "Mocha Pro"],
+    role: "VFX Artist — Cloth Simulation & Dynamics",
+    tools: ["Blender", "After Effects"],
     hero: true,
-    thumb: "https://placehold.co/640x360/1a1a1a/666?text=Hologram+VFX",
-    finalVideo: "placeholder_final_hologram.mp4",
-    breakdownVideo: "placeholder_breakdown_hologram.mp4",
-    beforeAfter: {
-      before: "https://placehold.co/640x360/1a1a1a/666?text=Plate",
-      after: "https://placehold.co/640x360/1a1a1a/666?text=Final+Comp"
-    },
+    thumb: "https://placehold.co/640x360/1a1a1a/666?text=Cloth+Simulation",
+    finalVideo: "VFX & LIVEACTION/cloth simulation.mp4",
+    breakdownVideo: "VFX & LIVEACTION/cloth simulation.mp4",
+    beforeAfter: null,
     responsibilities: [
-      "Tracked handheld phone footage in Mocha Pro",
-      "Designed holographic UI elements in After Effects",
-      "Created glitch and scan-line effects",
-      "Integrated hologram with interactive light on hand",
-      "Color matched to original footage",
-      "Delivered ProRes for social media"
+      "Simulated cloth dynamics with realistic physics",
+      "Applied material properties for fabric behavior",
+      "Rendered cloth interaction with forces",
+      "Optimized simulation for efficiency",
+      "Color graded final output",
+      "Delivered high-quality VFX sequence"
     ],
-    credits: "Personal Project — Concept Piece",
-    notes: "120 frames, handheld track."
+    credits: "Personal Project — Simulation Study",
+    notes: "Complex cloth dynamics demonstration."
   },
   {
     id: "proj-003",
-    title: "Skincare Brand Campaign",
+    title: "Nivea Skincare Campaign",
     year: 2024,
     category: "product3d",
     role: "3D Generalist — Product Animation + Compositing",
     tools: ["Blender", "After Effects", "Photoshop"],
     hero: true,
-    thumb: "https://placehold.co/640x360/1a1a1a/666?text=Skincare+Ad",
-    finalVideo: "placeholder_final_skincare.mp4",
-    breakdownVideo: "placeholder_breakdown_skincare.mp4",
+    thumb: "https://placehold.co/640x360/1a1a1a/666?text=Nivea+Skincare",
+    finalVideo: "product visualization/nivea.mp4",
+    breakdownVideo: "product visualization/nivea.mp4",
     beforeAfter: null,
     responsibilities: [
       "Modeled product from 2D reference images",
@@ -75,33 +72,31 @@ const PROJECTS = [
       "Rendered 4 angles for carousel content",
       "Composited with lifestyle background plates"
     ],
-    credits: "Client: Beauty Startup",
-    notes: "Delivered in 1 week."
+    credits: "Client: Nivea Skincare",
+    notes: "Leading skincare brand animation."
   },
   {
     id: "proj-004",
-    title: "Music Video — Portal Effect",
+    title: "Fire Simulation Study",
     year: 2024,
     category: "vfx_comp",
-    role: "VFX Artist — Portal Design + Compositing",
-    tools: ["After Effects", "Blender", "Mocha Pro"],
+    role: "VFX Artist — Fire & Smoke Simulation",
+    tools: ["Blender", "After Effects"],
     hero: false,
-    thumb: "https://placehold.co/640x360/1a1a1a/666?text=Portal+VFX",
-    finalVideo: "placeholder_final_portal.mp4",
-    breakdownVideo: "placeholder_breakdown_portal.mp4",
-    beforeAfter: {
-      before: "https://placehold.co/640x360/1a1a1a/666?text=Clean+Plate",
-      after: "https://placehold.co/640x360/1a1a1a/666?text=Portal+Final"
-    },
+    thumb: "https://placehold.co/640x360/1a1a1a/666?text=Fire+Simulation",
+    finalVideo: "VFX & LIVEACTION/fire simulation.mp4",
+    breakdownVideo: "VFX & LIVEACTION/fire simulation.mp4",
+    beforeAfter: null,
     responsibilities: [
-      "Created 3D portal geometry in Blender",
-      "Animated portal opening with particle emission",
-      "Tracked talent movement for interaction",
-      "Composited portal with light wrap on talent",
-      "Added interactive glow and reflections"
+      "Simulated fire and smoke with realistic behavior",
+      "Applied dominant wave extrapolation for fluid dynamics",
+      "Controlled burn and temperature properties",
+      "Rendered volumetric effects with shaders",
+      "Color and lighting for dramatic effect",
+      "Optimized simulation for render time"
     ],
-    credits: "Artist: Nigerian Musician",
-    notes: "200-frame shot, greenscreen."
+    credits: "Personal Project — Simulation Study",
+    notes: "Advanced fluid dynamics in Blender."
   },
   {
     id: "proj-005",
@@ -127,29 +122,26 @@ const PROJECTS = [
   },
   {
     id: "proj-006",
-    title: "Environment Extension — Rooftop Scene",
+    title: "Water Simulation for Beverage",
     year: 2024,
     category: "vfx_comp",
-    role: "Compositor — Sky Replacement + Set Extension",
-    tools: ["After Effects", "Mocha Pro", "Photoshop"],
+    role: "VFX Artist — Fluid Simulation + Compositing",
+    tools: ["Blender", "After Effects"],
     hero: true,
-    thumb: "https://placehold.co/640x360/1a1a1a/666?text=Environment+VFX",
-    finalVideo: "placeholder_final_environment.mp4",
-    breakdownVideo: "placeholder_breakdown_environment.mp4",
-    beforeAfter: {
-      before: "https://placehold.co/640x360/1a1a1a/666?text=Original+Plate",
-      after: "https://placehold.co/640x360/1a1a1a/666?text=Extended+Scene"
-    },
+    thumb: "https://placehold.co/640x360/1a1a1a/666?text=Water+Simulation",
+    finalVideo: "VFX & LIVEACTION/wrok water.mp4",
+    breakdownVideo: "VFX & LIVEACTION/wrok water.mp4",
+    beforeAfter: null,
     responsibilities: [
-      "Replaced overcast sky with dramatic sunset",
-      "Extended building rooftop with matte painting",
-      "Tracked camera movement for seamless blend",
-      "Color matched extension to original footage",
-      "Added atmospheric haze and light rays",
-      "Delivered color-graded final"
+      "Simulated liquid dynamics with realistic physics",
+      "Controlled viscosity and surface tension properties",
+      "Rendered water interaction and splashing",
+      "Applied materials for liquid appearance",
+      "Integrated with product photography",
+      "Delivered broadcast-quality sequence"
     ],
-    credits: "Client: Content Creator",
-    notes: "150 frames, handheld footage."
+    credits: "Client: Beverage Brand",
+    notes: "Integrated liquid simulation for product ads."
   },
   {
     id: "proj-007",
@@ -198,15 +190,15 @@ const PROJECTS = [
   },
   {
     id: "proj-009",
-    title: "Beverage Product Animation",
+    title: "Wrok Water Brand Spot",
     year: 2024,
     category: "product3d",
     role: "3D Artist — Product Modeling + Animation",
     tools: ["Blender", "After Effects", "Photoshop"],
     hero: false,
-    thumb: "https://placehold.co/640x360/1a1a1a/666?text=Beverage+3D",
-    finalVideo: "placeholder_final_beverage.mp4",
-    breakdownVideo: "placeholder_breakdown_beverage.mp4",
+    thumb: "https://placehold.co/640x360/1a1a1a/666?text=Wrok+Water",
+    finalVideo: "product visualization/wrok.mp4",
+    breakdownVideo: "product visualization/wrok.mp4",
     beforeAfter: null,
     responsibilities: [
       "Modeled can from product photos",
@@ -214,8 +206,8 @@ const PROJECTS = [
       "Animated pour with liquid simulation",
       "Rendered multiple angles for ad cuts"
     ],
-    credits: "Client: Beverage Brand",
-    notes: "Full CG including liquid."
+    credits: "Client: Wrok Water",
+    notes: "Premium water brand animation."
   },
   {
     id: "proj-010",
@@ -263,24 +255,49 @@ const PROJECTS = [
   },
   {
     id: "proj-012",
-    title: "Ad Campaign — Product Closeups",
+    title: "Face Fact Skincare Campaign",
     year: 2023,
-    category: "motion",
-    role: "Motion Designer — Product Showcase",
-    tools: ["After Effects", "Blender", "Photoshop"],
+    category: "product3d",
+    role: "3D Generalist — Product Animation + Compositing",
+    tools: ["Blender", "After Effects", "Photoshop"],
     hero: false,
-    thumb: "https://placehold.co/640x360/1a1a1a/666?text=Product+Motion",
-    finalVideo: "placeholder_final_product.mp4",
-    breakdownVideo: "placeholder_breakdown_product.mp4",
+    thumb: "https://placehold.co/640x360/1a1a1a/666?text=Face+Fact",
+    finalVideo: "product visualization/face fact.mp4",
+    breakdownVideo: "product visualization/face fact.mp4",
     beforeAfter: null,
     responsibilities: [
-      "Animated product reveals with 3D elements",
-      "Designed text overlays and callouts",
-      "Created seamless loop animations",
-      "Delivered 60s and 15s social cuts"
+      "Modeled product from client reference images",
+      "Created material textures with realistic properties",
+      "Animated product reveal and rotation",
+      "Rendered multiple angles for social media",
+      "Composited with background plates",
+      "Delivered optimized files for web"
     ],
-    credits: "Client: E-commerce Brand",
-    notes: "Instagram and TikTok formats."
+    credits: "Client: Face Fact Skincare",
+    notes: "Skincare brand animation spotlight."
+  },
+  {
+    id: "proj-013",
+    title: "Dr Brown Skincare Campaign",
+    year: 2024,
+    category: "product3d",
+    role: "3D Generalist — Product Animation + Compositing",
+    tools: ["Blender", "After Effects", "Photoshop"],
+    hero: false,
+    thumb: "https://placehold.co/640x360/1a1a1a/666?text=Dr+Brown",
+    finalVideo: "product visualization/dr brown.mp4",
+    breakdownVideo: "product visualization/dr brown.mp4",
+    beforeAfter: null,
+    responsibilities: [
+      "Modeled skincare product from reference materials",
+      "Created premium material finishes and textures",
+      "Animated product highlights and reveals",
+      "Rendered for multiple social media platforms",
+      "Composited with branded background elements",
+      "Delivered final export with color grading"
+    ],
+    credits: "Client: Dr Brown Skincare",
+    notes: "Professional skincare brand animation."
   }
 ];
 

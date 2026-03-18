@@ -1,0 +1,22 @@
+# Video files
+*.mp4
+
+# Archive files
+*.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node modules (if using npm)
+node_modules/
+
+# Build output
+dist/
+build/
