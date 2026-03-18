@@ -107,8 +107,8 @@ const PROJECTS = [
     tools: ["Blender", "After Effects"],
     hero: true,
     thumb: "https://placehold.co/640x360/1a1a1a/666?text=Water+Simulation",
-    finalVideo: "VFX & LIVEACTION/wrok water.mp4",
-    breakdownVideo: "VFX & LIVEACTION/wrok water.mp4",
+    finalVideo: "https://res.cloudinary.com/dsu1po0tg/video/upload/v1773818729/wrok_water_uab1fp.mp4",
+    breakdownVideo: "https://res.cloudinary.com/dsu1po0tg/video/upload/v1773818729/wrok_water_uab1fp.mp4",
     beforeAfter: null,
     responsibilities: [
       "Simulated liquid dynamics with realistic physics",
