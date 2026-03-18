@@ -10,7 +10,7 @@ const PROJECTS = [
   {
     id: "proj-001",
     title: "Zaron Cosmetics Spot",
-    year: 2024,
+    year: 2026,
     category: "product3d",
     role: "3D Artist — Full CG Product + Lighting + Compositing",
     tools: ["Blender", "After Effects", "Photoshop"],
@@ -33,7 +33,7 @@ const PROJECTS = [
   {
     id: "proj-002",
     title: "Fabric Cloth Simulation",
-    year: 2024,
+    year: 2025,
     category: "vfx_comp",
     role: "VFX Artist — Cloth Simulation & Dynamics",
     tools: ["Blender", "After Effects"],
@@ -56,7 +56,7 @@ const PROJECTS = [
   {
     id: "proj-003",
     title: "Nivea Skincare Campaign",
-    year: 2024,
+    year: 2026,
     category: "product3d",
     role: "3D Generalist — Product Animation + Compositing",
     tools: ["Blender", "After Effects", "Photoshop"],
@@ -78,7 +78,7 @@ const PROJECTS = [
   {
     id: "proj-004",
     title: "Fire Simulation Study",
-    year: 2024,
+    year: 2025,
     category: "vfx_comp",
     role: "VFX Artist — Fire & Smoke Simulation",
     tools: ["Blender", "After Effects"],
@@ -101,7 +101,7 @@ const PROJECTS = [
   {
     id: "proj-006",
     title: "Water Simulation for Beverage",
-    year: 2024,
+    year: 2025,
     category: "vfx_comp",
     role: "VFX Artist — Fluid Simulation + Compositing",
     tools: ["Blender", "After Effects"],
@@ -124,7 +124,7 @@ const PROJECTS = [
   {
     id: "proj-009",
     title: "Wrok Water Brand Spot",
-    year: 2024,
+    year: 2026,
     category: "product3d",
     role: "3D Artist — Product Modeling + Animation",
     tools: ["Blender", "After Effects", "Photoshop"],
@@ -145,7 +145,7 @@ const PROJECTS = [
   {
     id: "proj-012",
     title: "Face Fact Skincare Campaign",
-    year: 2023,
+    year: 2025,
     category: "product3d",
     role: "3D Generalist — Product Animation + Compositing",
     tools: ["Blender", "After Effects", "Photoshop"],
@@ -168,7 +168,7 @@ const PROJECTS = [
   {
     id: "proj-013",
     title: "Dr Brown Skincare Campaign",
-    year: 2024,
+    year: 2026,
     category: "product3d",
     role: "3D Generalist — Product Animation + Compositing",
     tools: ["Blender", "After Effects", "Photoshop"],
@@ -191,7 +191,7 @@ const PROJECTS = [
   {
     id: "proj-014",
     title: "OPay Fintech App Campaign",
-    year: 2024,
+    year: 2025,
     category: "product3d",
     role: "3D Artist — Product Animation + UI Integration",
     tools: ["Blender", "After Effects", "Photoshop"],
